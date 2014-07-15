@@ -1,0 +1,3 @@
+. $HOME/.profile
+. $HOME/.colors
+. $HOME/.bashrc
