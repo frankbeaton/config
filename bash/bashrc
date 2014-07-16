@@ -12,56 +12,67 @@ shopt -s checkwinsize
 
 force_color_prompt=yes
 
-export PS1="$YELLOW[\u@\h $CYAN\w$YELLOW] ⚡$NO_COLOR "
+export PS1="$YELLOW[\u@local $CYAN\W$YELLOW] ⚡$NO_COLOR "
+
+# gitprompt configuration
+GIT_PROMPT_ONLY_IN_REPO=1
+
+# source the gitprompt script
+. ~/.bash-git-prompt/gitprompt.sh
 
 #############
 ## ALIASES ##
 #############
 
 # ls
-alias ls="ls -Gp"
-alias ll="ls -lh"
-alias la="ls -A"
-alias lm="ll | less"
-alias lt="ll -t"
-alias l1="ls -1"
-# ll, but display octal permissions
-alias lso="ls -halGp | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'"
+alias ls="ls -pGh"   # make it pretty
+alias la="ls -A"     # show all files
+alias l1="ls -1"     # single column
+alias ll="ls -l"     # long format
+alias lt="ll -t"     # like ll, but sorted by date (desc)
+alias lm="ll | less" # paginate ll output
+# long format + octal permissions (ie, 755 instead of "drwxr-xr-x")
+alias lso="ls -hAl | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'"
 
 # tools
+alias cv="cp -v"
 alias op="open" #open dir in Finder
+alias ping="ping -c2" # limit pings to 2
 alias ip="curl ip.appspot.com"
-alias ping="ping -c2"
 alias timestamp="date +%s"
 alias mymamp="/Applications/MAMP/Library/bin/mysql cbr --user=root --pass=root"
 alias phpmamp="/Applications/MAMP/bin/php/php5.3.14/bin/php"
 alias cl="clear"
-alias home="cd ~"
-alias free="df -H -l"
-alias cv="cp -v"
-alias less="less -R"
+alias free="df -Hl"
 alias more="less"
 alias tgz="tar czvf"
 alias untar="tar xvf"
+alias less="less -R" # accept color codes in pipes to less
+# open a giant file in vim without crashing it
+alias vlfvim="vim -u NONE --cmd 'set nobackup nowritebackup noswapfile'"
+alias vag='vagrant'
+alias killspotlight='sudo mdutil -a -i off' # disable spotlight indexing (s/off/on to re-enable)
 
 # git
 alias gs="git status"
-alias gss="git stash"
+alias gst="git stash"
 alias gsp="git stash pop"
+alias gca="git commit -a"
 alias gl="git log --date=short --abbrev-commit --stat"
 alias gba="git branch --all"
-alias gitme="git log --author=\"Frank Beaton\" --stat"
+alias gitme="gl --author=\"Frank Beaton\""
 alias gitrecent="git for-each-ref --sort=-committerdate refs/heads/"
 alias gup='git pull --all --recurse-submodules=yes ; git fetch --tags'
+alias gdev='git checkout develop && gup'
 
 # personal
-alias westworld="ssh -p 2222 -o PubkeyAuthentication=no fbeaton@westworld-studios.com";
+alias westworld="ssh -p 2222 -o PubkeyAuthentication=no fbeaton@192.254.188.67"
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;33m' # begin blinking
 export LESS_TERMCAP_md=$'\E[01;33m' # begin bold
-export LESS_TERMCAP_me=$'\E[0m' # end mode
-export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
+export LESS_TERMCAP_me=$'\E[0m'     # end mode
+export LESS_TERMCAP_se=$'\E[0m'     # end standout-mode
 export LESS_TERMCAP_so=$'\E[01;35m' # begin standout-mode – info
-export LESS_TERMCAP_ue=$'\E[0m' # end underline
-export LESS_TERMCAP_us=$'\E[32m' # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'     # end underline
+export LESS_TERMCAP_us=$'\E[32m'    # begin underline

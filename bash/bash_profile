@@ -1,3 +1,5 @@
 . $HOME/.profile
 . $HOME/.colors
 . $HOME/.bashrc
+. /usr/local/etc/bash_completion
+. $HOME/.git-flow-completion.sh
