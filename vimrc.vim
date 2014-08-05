@@ -30,14 +30,17 @@ syntax on
 set ls=2
 set t_Co=256
 set background=dark
-colorscheme blackest_board
 set hidden
 set nocompatible
+set nobomb
+set encoding=utf-8
+set fileformat=unix
 set number
 set ruler
 set gcr=a:blinkon0
 set cursorline
-set colorcolumn=101
+" set colorcolumn=101
+set colorcolumn=81
 set autoindent
 set noexpandtab
 set tabstop=2
@@ -47,6 +50,9 @@ set scrolloff=5
 set linebreak
 set nofoldenable
 set mouse=a
+
+" theme
+colorscheme blackest_board
 
 " set leader key to comma
 let mapleader=","
@@ -97,9 +103,10 @@ map <leader>to :set scrolloff=5<CR>
 map <leader>uns  :r!php -r "print_r(  unserialize(file_get_contents('%')));"<CR>
 map <leader>ser  :r!php -r "print_r(  serialize(file_get_contents('%')));"<CR>
 
-" change case of current word (uppercase/lowercase)
+" change case of current word (uppercase/lowercase/title case)
 map <leader>uc gUiw
 map <leader>lc guiw
+map <leader>tc :s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR> | let @/ = ""
 
 " quote/unquote current word
 map <leader>qq ciw"<C-r>""
@@ -108,6 +115,8 @@ map <leader>uq di"hPl2x
 " quote v-selected string (,uq works on these, too)
 map <leader>q c"<C-r>""
 
+" show full path to current file
+map <leader>f :echo expand('%:p')<CR>
 
 """"""""""""""""""""""""""""""""""""
 " CUSTOM COMMANDS, FUNCTIONS, ETC. "
@@ -133,7 +142,7 @@ command WhatSyntax echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "na
 " persistent undo (vim remembers your changes even after you close the file)
 if has('persistent_undo')
 	set undofile
-	set undodir=$HOME/.vim/undodir
+	set undodir=$HOME/.vim_undo
 	set undolevels=100
 endif
 
