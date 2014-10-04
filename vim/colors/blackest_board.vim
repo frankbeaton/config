@@ -32,24 +32,26 @@ hi Function	      guifg=#8DA6CE    ctermfg=110  gui=NONE      cterm=NONE
 hi Identifier	    guifg=#ffffff    ctermfg=231  gui=NONE      cterm=NONE
 hi LineNr	        guifg=#8a8a8a    ctermfg=245  guibg=#1f2529 ctermbg=NONE   gui=NONE    cterm=NONE
 hi MatchParen	    guifg=#ccffcc    ctermfg=252  guibg=#FF6400 ctermbg=202    gui=NONE    cterm=NONE
-hi NonText	      guibg=#080808    ctermbg=232  guifg=#81bed6 ctermfg=245    gui=NONE    cterm=NONE
+hi NonText	      guibg=#080808    ctermbg=232  guifg=#8a8a8a ctermfg=245    gui=NONE    cterm=NONE
 hi Normal	        guifg=#f0f0f0    ctermfg=255  guibg=#1f2529 ctermbg=234    gui=NONE    cterm=NONE
 hi Number	        guifg=#d7ff5f    ctermfg=191  gui=NONE      cterm=NONE
 hi PreProc	      guifg=#8DA6CE    ctermfg=110  gui=NONE      cterm=NONE
-hi Search         guifg=#000000    ctermfg=0    guibg=#FF6400 ctermbg=77     gui=NONE    cterm=NONE
+hi Pmenu	        guifg=#eeeeee    ctermfg=255  guibg=#5fd75f ctermbg=7      gui=NONE    cterm=NONE
+hi PmenuSel	      guifg=#000000    ctermfg=0    guibg=#d7ff5f ctermbg=191    gui=NONE    cterm=NONE
+hi Search         guifg=#000000    ctermfg=0    guibg=#5fd75f ctermbg=77     gui=NONE    cterm=NONE
 hi Special	      guifg=#FBDE2D    ctermfg=220  gui=NONE      cterm=NONE
-hi SpecialKey	    guifg=#9acd32    ctermfg=9    gui=NONE      cterm=NONE
+hi SpecialKey	    guifg=#8a8a8a    ctermfg=237    gui=NONE      cterm=NONE
 hi Statement	    guifg=#FBDE2D    ctermfg=220  gui=NONE      cterm=NONE
-hi StatusLine	    guibg=#c2bfa5    ctermbg=232  guifg=#FF6400 ctermfg=202    gui=NONE    cterm=NONE
+hi StatusLine	    guibg=#080808    ctermbg=232  guifg=#FF6400 ctermfg=202    gui=NONE    cterm=NONE
 hi StatusLineNC	  guibg=#c2bfa5    ctermbg=237  guifg=#777777 ctermfg=245    gui=NONE    cterm=NONE
 hi StorageClass	  guifg=#FBDE2D    ctermfg=220  gui=NONE      cterm=NONE
-hi String	        guifg=#0cff14    ctermfg=77   gui=NONE      cterm=NONE
+hi String	        guifg=#61CE3C    ctermfg=77   gui=NONE      cterm=NONE
 hi Title	        guifg=#cd5c5c    ctermfg=252  gui=bold      cterm=bold
-hi Todo	          guifg=#FF6400    ctermfg=202  ctermbg=NONE  gui=NONE       cterm=bold
+hi Todo	          guifg=#FF6400    ctermfg=202  guibg=NONE    ctermbg=NONE  gui=bold       cterm=bold
 hi Type	          guifg=#8DA6CE    ctermfg=110  gui=NONE      cterm=NONE
 hi Underlined	    guifg=#80a0ff    ctermfg=89   gui=underline cterm=underline
-hi VertSplit	    guibg=#c2bfa5    ctermbg=237  guifg=#777777 ctermfg=245    gui=NONE    cterm=NONE
-hi Visual	        guifg=#f0e68c    ctermfg=255  guibg=#6b8e23 ctermbg=51     gui=NONE    cterm=NONE
+hi VertSplit	    guibg=#3a3a3a    ctermbg=237  guifg=#8a8a8a ctermfg=245    gui=NONE    cterm=NONE
+hi Visual	        guifg=#000000    ctermfg=255  guibg=#00FFFF ctermbg=51     gui=NONE    cterm=NONE
 
 " php
 hi phpBoolean	        guifg=#FF6400    ctermfg=202  gui=NONE    cterm=NONE

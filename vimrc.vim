@@ -50,6 +50,7 @@ set scrolloff=5
 set linebreak
 set nofoldenable
 set mouse=a
+set listchars=tab:→\|,extends:>,precedes:<,nbsp:·
 
 " theme
 colorscheme blackest_board
@@ -105,7 +106,7 @@ map <leader>ser  :r!php -r "print_r(  serialize(file_get_contents('%')));"<CR>
 
 " change case of current word (uppercase/lowercase/title case)
 map <leader>uc gUiw
-map <leader>lc guiw
+map <leader>lc gui
 map <leader>tc :s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR> | let @/ = ""
 
 " quote/unquote current word
@@ -146,18 +147,6 @@ if has('persistent_undo')
 	set undolevels=100
 endif
 
-" use TAB to complete when typing words, else inserts TABs as usual
-function! Tab_Or_Complete()
-	if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-		return "\<C-N>"
-	else
-		return "\<Tab>"
-	endif
-endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-set dictionary="/usr/dict/words"
-
-
 """""""""""""""""""""""""
 " PLUGIN-SPECIFIC STUFF "
 """""""""""""""""""""""""
@@ -185,3 +174,4 @@ nmap <silent> <leader>bx :BufExplorerVerticalSplit<CR>
 " pdv: add php docblock
 let g:pdv_template_dir = $HOME."/.vim/bundle/pdv/templates"
 map <leader>pd :call pdv#DocumentCurrentLine()<CR>
+
