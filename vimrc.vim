@@ -127,18 +127,18 @@ map <leader>f :echo expand('%:p')<CR>
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " highlight trailing whitespace in red
-hi ExtraWhitespace ctermbg=Red guibg=#ff0000
+highlight ExtraWhitespace ctermbg=red ctermfg=red guibg=#ff0000 guifg=#ff0000
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+au BufWinEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
+au BufWinLeave * call clearmatches()
 
 " remove trailing whitespace (and clear hlsearch)
-command Killwhitey %s/\s\+$// | let @/ = ""
+command! Killwhitey %s/\s\+$// | let @/ = ""
 
 " get syntax definition for current word/symbol (useful for colorscheme tweaking)
-command WhatSyntax echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+command! WhatSyntax echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 
 " persistent undo (vim remembers your changes even after you close the file)
 if has('persistent_undo')
@@ -174,4 +174,3 @@ nmap <silent> <leader>bx :BufExplorerVerticalSplit<CR>
 " pdv: add php docblock
 let g:pdv_template_dir = $HOME."/.vim/bundle/pdv/templates"
 map <leader>pd :call pdv#DocumentCurrentLine()<CR>
-
