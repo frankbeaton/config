@@ -38,7 +38,7 @@ hi Number	        guifg=#d7ff5f    ctermfg=191  gui=NONE      cterm=NONE
 hi PreProc	      guifg=#8DA6CE    ctermfg=110  gui=NONE      cterm=NONE
 hi Pmenu	        guifg=#eeeeee    ctermfg=255  guibg=#000000 ctermbg=0      gui=NONE    cterm=NONE
 hi PmenuSel	      guifg=#000000    ctermfg=0    guibg=#99CCFF ctermbg=191    gui=NONE    cterm=NONE
-hi Search         guifg=#000000    ctermfg=0    guibg=#5fd75f ctermbg=77     gui=NONE    cterm=NONE
+hi Search         guifg=#FFFFFF    ctermfg=0    guibg=#FF0000 ctermbg=77     gui=NONE    cterm=NONE
 hi Special	      guifg=#FBDE2D    ctermfg=220  gui=NONE      cterm=NONE
 hi SpecialKey	    guifg=#2E373E    ctermfg=237    gui=NONE      cterm=NONE
 hi Statement	    guifg=#FBDE2D    ctermfg=220  gui=NONE      cterm=NONE

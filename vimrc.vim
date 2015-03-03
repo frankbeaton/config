@@ -36,10 +36,9 @@ set nobomb
 set encoding=utf-8
 set fileformat=unix
 set number
-set ruler
 set gcr=a:blinkon0
 set cursorline
-" set colorcolumn=101
+set statusline=%F\ %y\ %h%m%r\ %=%([%l,%v][%p%%]\ %)
 set colorcolumn=81
 set autoindent
 set noexpandtab
@@ -50,7 +49,8 @@ set scrolloff=5
 set linebreak
 set nofoldenable
 set mouse=a
-set listchars=tab:→\|,extends:>,precedes:<,nbsp:·
+set list
+set listchars=tab:→\|
 
 " theme
 colorscheme blackest_board
