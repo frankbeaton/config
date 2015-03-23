@@ -12,7 +12,7 @@ shopt -s checkwinsize
 
 force_color_prompt=yes
 
-export PS1="$YELLOW[\u@local $CYAN\W$YELLOW] ⚡$NO_COLOR "
+export PS1="$YELLOW[\u@\h $CYAN\W$YELLOW] ⚡$NO_COLOR "
 
 # gitprompt configuration
 GIT_PROMPT_ONLY_IN_REPO=1
@@ -25,7 +25,8 @@ GIT_PROMPT_ONLY_IN_REPO=1
 #############
 
 # ls
-alias ls="ls -pGh"   # make it pretty
+# alias ls="ls -pGh"   # make it pretty
+alias ls="ls --color=auto -ph"   # make it pretty
 alias la="ls -A"     # show all files
 alias l1="ls -1"     # single column
 alias ll="ls -l"     # long format
@@ -36,29 +37,33 @@ alias lso="ls -hAl | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*
 
 # tools
 alias cv="cp -v"
-alias op="open" #open dir in Finder
+alias op="open" # open dir in Finder
 alias ping="ping -c2" # limit pings to 2
-alias ip="curl ip.appspot.com"
 alias timestamp="date +%s"
-alias mymamp="/Applications/MAMP/Library/bin/mysql cbr --user=root --pass=root"
-alias phpmamp="/Applications/MAMP/bin/php/php5.3.14/bin/php"
 alias cl="clear"
-alias free="df -Hl"
-alias more="less"
-alias tgz="tar czvf"
-alias untar="tar xvf"
+alias free="df -hl"
 alias less="less -R" # accept color codes in pipes to less
+alias more="less"
 # open a giant file in vim without crashing it
-alias vlfvim="vim -u NONE --cmd 'set nobackup nowritebackup noswapfile'"
+alias bigvim="vim -u NONE --cmd 'set nobackup nowritebackup noswapfile'"
 alias vag='vagrant'
 alias killspotlight='sudo mdutil -a -i off' # disable spotlight indexing (s/off/on to re-enable)
+alias diff='colordiff -yW"`tput cols`"'
+alias vim="mvim"
+alias boris="$HOME/boris.phar"
+alias vbox="VBoxManage"
+alias ducks="du -cks * | sort -rn | head" # find large files
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+alias cleardns="sudo discoveryutil mdnsflushcache"
 
 # git
 alias gs="git status"
 alias gst="git stash"
 alias gsp="git stash pop"
 alias gca="git commit -a"
-alias gl="git log --date=short --abbrev-commit --stat"
+alias gl="git log --date=local --abbrev-commit --stat"
 alias gba="git branch --all"
 alias gitme="gl --author=\"Frank Beaton\""
 alias gitrecent="git for-each-ref --sort=-committerdate refs/heads/"
@@ -66,7 +71,7 @@ alias gup='git pull --all --recurse-submodules=yes ; git fetch --tags'
 alias gdev='git checkout develop && gup'
 
 # personal
-alias westworld="ssh -p 2222 -o PubkeyAuthentication=no fbeaton@192.254.188.67"
+alias westworld="ssh -p 2222 -o PubkeyAuthentication=no fbeaton@108.167.155.96"
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;33m' # begin blinking
@@ -76,3 +81,6 @@ export LESS_TERMCAP_se=$'\E[0m'     # end standout-mode
 export LESS_TERMCAP_so=$'\E[01;35m' # begin standout-mode – info
 export LESS_TERMCAP_ue=$'\E[0m'     # end underline
 export LESS_TERMCAP_us=$'\E[32m'    # begin underline
+
+export CLICOLORS=1
+export LS_COLORS="di=34;40:ln=95;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=31;43:su=0;41:sg=0;46:tw=90;43:ow=90;44:st=90;101:"

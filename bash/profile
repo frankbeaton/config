@@ -1,4 +1,6 @@
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/ruby/2.1.1_1/bin/:/Applications/MAMP/Library/bin:/Applications/MAMP/Library/include/mysql:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/Users/fbeaton/bin:$PATH"
+export EDITOR="vim"
 export TERM="xterm-256color"
-export EDITOR=vim
-export PAGER=less
+export PAGER="less"
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/Users/fbeaton/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:

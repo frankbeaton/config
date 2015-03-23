@@ -1,6 +1,6 @@
 [user]
-	name = Frank Beaton
-	email = frankbeaton@gmail.com
+	name  = frank
+	email = frank@cdbaby.com
 
 [diff]
 	# Tell git diff to use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation:
@@ -20,20 +20,21 @@
 
 [alias]
 	gelf = !~/Projects/hb-gelfling/main.sh
-	sip = merge --no-commit --no-ff
+	sip  = merge --no-commit --no-ff
+	co   = checkout
 
 [color]
 	branch = true
-	diff = true
+	diff   = true
 	status = true
-	ui = true
+	ui     = true
 
 [core]
 	# http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-	editor = /usr/bin/vim
+	editor       = /usr/local/bin/vim
 	excludesfile = ~/.hb-env/git/excludesfile.txt
-	pager = less -RSX --tabs=2
-	whitespace = trailing-space,space-before-tab
+	pager        = less -RSX --tabs=2
+	whitespace   = trailing-space,space-before-tab
 
 # This will most likely be changed to 'simple'. See: git help config, for more
 [push]
