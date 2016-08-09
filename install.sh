@@ -6,10 +6,10 @@ fi
 
 mv $HOME/.bash* $HOME/.profile $HOME/.vim* $HOME/config-bak
 
-ln -s $HOME/.bash_profile /projects/config/bash/bash_profile
-ln -s $HOME/.bashrc /projects/config/bash/bashrc
-ln -s $HOME/.profile /projects/config/bash/profile
-ln -s $HOME/.colors /projects/config/bash/colors
-ln -s $HOME/.vimrc /projects/config/vimrc.vim
-ln -s $HOME/.vim /projects/config/vim
+ln -s $HOME/.bash_profile $HOME/Projects/config/bash/bash_profile
+ln -s $HOME/.bashrc $HOME/Projects/config/bash/bashrc
+ln -s $HOME/.profile $HOME/Projects/config/bash/profile
+ln -s $HOME/.colors $HOME/Projects/config/bash/colors
+ln -s $HOME/.vimrc $HOME/Projects/config/vimrc.vim
+ln -s $HOME/.vim $HOME/Projects/config/vim
 
