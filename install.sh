@@ -12,4 +12,5 @@ ln -s $HOME/.profile $HOME/Projects/config/bash/profile
 ln -s $HOME/.colors $HOME/Projects/config/bash/colors
 ln -s $HOME/.vimrc $HOME/Projects/config/vimrc.vim
 ln -s $HOME/.vim $HOME/Projects/config/vim
-
+ln -s $HOME/.git-flow-completion.sh $HOME/Projects/config/git/git-flow-completion.sh
+ln -s $HOME/.git-prompt-colors.sh $HOME/Projects/config/git/git-prompt-colors.sh

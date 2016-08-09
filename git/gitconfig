@@ -22,7 +22,8 @@
 	gelf = !~/Projects/hb-gelfling/main.sh
 	sip  = merge --no-commit --no-ff
 	co   = checkout
-
+	testing = !sh -c 'git tag -d testing && git push origin :refs/tags/testing && git tag -f testing && git push --tags'
+	head = reset HEAD --hard
 [color]
 	branch = true
 	diff   = true
