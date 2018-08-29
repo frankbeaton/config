@@ -1,6 +1,6 @@
 " Vim color file blackest_board
 "
-" handy cterm colors guide: http://pln.jonas.me/xterm-colors
+" handy cterm colors guide: http://jonasjacek.github.io/colors/
 
 set background=dark
 hi clear
